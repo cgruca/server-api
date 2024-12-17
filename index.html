@@ -8,8 +8,14 @@
 <body>
     <h1>Send JSON to Flask Server</h1>
 
+    <textarea id="jsonInput" placeholder='Enter JSON here' rows="10" cols="50"></textarea>
+    <br>
+    
     <button id="sendButton">Send Data</button>
     <button id="readButton">Read Data</button>
+
+    <div id="response" style="margin-top: 20px; color: green;"></div>
+
 
     <div id="response" style="margin-top: 20px; color: green;"></div>
 
@@ -23,6 +29,18 @@
 
         // Send data to the Flask server on button click
         document.getElementById("sendButton").addEventListener("click", () => {
+            const jsonInput = document.getElementById("jsonInput").value;
+
+            // Validate and parse JSON input
+            let dataToSend;
+            try {
+                dataToSend = JSON.parse(jsonInput); // Parse JSON input from the textarea
+            } catch (error) {
+                document.getElementById("response").innerText = "Error: Invalid JSON format.";
+                console.error("Invalid JSON:", error);
+                return;
+            }
+            
             fetch(url + "/update", {
                 method: "POST",
                 headers: {
