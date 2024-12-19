@@ -13,6 +13,7 @@ def home():
     return send_file("index.html")
 
 
+
 def run():
     app.run(host='0.0.0.0', port=8080)
 
@@ -20,7 +21,6 @@ def run():
 def keep_alive():
     t = Thread(target=run)
     t.start()
-
 
 # Function to write data to the file
 def update_file(data):
@@ -65,6 +65,13 @@ def get_data():
     except Exception as e:
         print(f"Error reading file: {e}")
         return jsonify({"error": "Failed to read file"}), 500
+    
+
+@app.route('/dance')
+def home():
+    return send_file("dance.html")
+
+
 
 
 if __name__ == '__main__':

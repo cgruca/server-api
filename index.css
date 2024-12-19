@@ -1,0 +1,292 @@
+
+body {
+    overflow: hidden;
+}
+
+@-webkit-keyframes rainbow {  
+    0% {background-color: #ff0000;}
+    10% {background-color: #ff9a00;}
+    20% {background-color: #d0de21;}
+    30% {background-color: #4fdc4a;}
+    40% {background-color: #3fdad8;}
+    50% {background-color: #2fc9e2;}
+    60% {background-color: #1c7fee;}
+    70% {background-color: #5f15f2;}
+    80% {background-color: #ba0cf8;}
+    90% {background-color: #fb07d9;}
+    100% {background-color: #ff0000;}
+  }
+  
+  .gradient {
+      height: 100%;
+      background-color: white;
+      -webkit-animation-name: rainbow;  
+      -webkit-animation-iteration-count: infinite;  
+      -webkit-animation-duration: 5s; 
+      -webkit-animation-timing-function: ease-in;
+  }  
+
+
+  .star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: transparent;
+      clip-path: polygon(
+        50% 0%, 
+        61% 35%, 
+        98% 35%, 
+        68% 57%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 57%, 
+        2% 35%, 
+        39% 35%
+      );
+      background: linear-gradient(45deg, #ffdd00, white);
+      pointer-events: none;
+      animation: starFadeOut 2.5s forwards, starTwinkle 2.5s infinite alternate;
+    }
+
+  @keyframes starFadeOut {
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  @keyframes starTwinkle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .giraffe {
+    z-index: 1000;
+    transition: transform 1s ease-in-out; /* Smooth transition */
+
+  }
+  
+  .rotated {
+    transform: rotate(360deg); /* Rotate the div 360 degrees */
+  }
+  
+  .snow2 {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 40s linear infinite;
+    -moz-animation: slowSnow 40s linear infinite;
+    -ms-animation: slowSnow 40s linear infinite;
+    animation: slowSnow 40s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+  .snow2::before {
+    content: "";
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 30s linear infinite;
+    -moz-animation: slowSnow 30s linear infinite;
+    -ms-animation: slowSnow 30s linear infinite;
+    animation: slowSnow 30s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+  /* slowSlow */
+  
+  @keyframes slowSnow {
+    0% {
+      transform: translate(0, 0);
+    }
+    20% {
+      transform: translate(-20px, 100px);
+    }
+    70% {
+      transform: translate(0px, 250px);
+    }
+    100% {
+      transform: translate(10px, 300px);
+    }
+  }
+
+  
+  .snow3 {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 80%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 40s linear infinite;
+    -moz-animation: slowSnow 40s linear infinite;
+    -ms-animation: slowSnow 40s linear infinite;
+    animation: slowSnow 40s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+  .snow3::before {
+    content: "";
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 30s linear infinite;
+    -moz-animation: slowSnow 30s linear infinite;
+    -ms-animation: slowSnow 30s linear infinite;
+    animation: slowSnow 30s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+  .snow4 {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 40s linear infinite;
+    -moz-animation: slowSnow 40s linear infinite;
+    -ms-animation: slowSnow 40s linear infinite;
+    animation: slowSnow 40s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+  .snow4::before {
+    content: "";
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    opacity: 0.8;
+  
+    -webkit-animation: slowSnow 30s linear infinite;
+    -moz-animation: slowSnow 30s linear infinite;
+    -ms-animation: slowSnow 30s linear infinite;
+    animation: slowSnow 30s linear infinite;
+  
+    box-shadow: 0 0px 6px 0px #fff, -20px 50px 4px 1px #fff,
+      80px 70px 4px 1px #fff, 200px 150px 4px 1px #fff, -200px 150px 4px 1px #fff,
+      -100px 100px 4px 1px #fff, 90px 180px 4px 1px #fff, 190px 280px 4px 1px #fff,
+      -150px 250px 4px 1px #fff, -190px 280px 4px 1px #fff,
+      -190px 80px 4px 1px #fff, -250px 200px 4px 1px #fff,
+      -270px 380px 4px 1px #fff, 270px 330px 4px 1px #fff,
+      -200px 390px 4px 1px #fff, -240px 310px 4px 1px #fff,
+      180px 380px 4px 1px #fff;
+  }
+  
+
+  .ground::after {
+    content: "";
+    width: 1831px;
+    height: 600px;
+    border-radius: 100% 50% 0% 50%;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    bottom: -150px;
+    left: calc(10% - 225px);
+    box-shadow: inset -40px 0px 20px 15px #cbd7e6, -130px -5px 30px -10px #fff, -150px -20px 0 -10px #b3c5da, 130px 35px 30px -30px #fff, 145px 20px 20px -20px #f5efe7, 150px 20px 0 -15px #b3c5da, 150px 20px 10px -16px #fff;
+}
+
+  .ground::before {
+    content: "";
+    width: 300px;
+    height: 150px;
+    border-radius: 60% 100% 0% 0%;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    position: absolute;
+    z-index: 2;
+    bottom: -66px;
+    right: 33px;
+    box-shadow: inset -50px 10px 40px 0px #cbd7e6;
+  }
+  
