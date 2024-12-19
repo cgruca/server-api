@@ -76,6 +76,7 @@ body {
   }
 
   .giraffe {
+    margin-top: 100px;
     z-index: 1000;
     transition: transform 1s ease-in-out; /* Smooth transition */
 
@@ -211,7 +212,7 @@ body {
     content: "";
     position: absolute;
     top: -100px;
-    left: 0%;
+    left: 14%;
     border-radius: 50%;
     width: 8px;
     height: 8px;
