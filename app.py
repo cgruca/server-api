@@ -68,7 +68,7 @@ def get_data():
     
 
 @app.route('/dance')
-def home():
+def dance():
     return send_file("dance.html")
 
 
