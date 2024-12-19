@@ -3,7 +3,7 @@ from threading import Thread
 import json
 import os
 
-app = Flask('')
+app = Flask(__name__, static_folder='static')
 
 DATA_FILE = "data.json"
 
